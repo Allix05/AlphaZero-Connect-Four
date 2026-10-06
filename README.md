@@ -1,13 +1,13 @@
 # AlphaZero Connect Four
 
-[![CI](https://github.com/Allix05/alphazero-connect4/actions/workflows/ci.yml/badge.svg)](https://github.com/Allix05/alphazero-connect4/actions/workflows/ci.yml)
+[![CI](https://github.com/Allix05/AlphaZero-Connect-Four/actions/workflows/ci.yml/badge.svg)](https://github.com/Allix05/AlphaZero-Connect-Four/actions/workflows/ci.yml)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
 
 A from-scratch implementation of the **AlphaZero** algorithm (self-play reinforcement learning + Monte Carlo Tree Search guided by a neural network) applied to Connect Four, with a polished web UI to play against the trained agent and see its search visualized live.
 
 No human game data. No hand-coded heuristics. The agent starts knowing nothing but the rules and gets stronger purely by playing itself, the same recipe DeepMind used for AlphaGo Zero / AlphaZero.
 
-**[Play against it in your browser](https://allix05.github.io/alphazero-connect4/)** &mdash; the trained network runs client-side via ONNX Runtime Web, no backend required.
+**[Play against it in your browser](https://allix05.github.io/AlphaZero-Connect-Four/)** &mdash; the trained network runs client-side via ONNX Runtime Web, no backend required.
 
 <!-- SCREENSHOT_PLACEHOLDER -->
 
@@ -112,7 +112,7 @@ tests/                pytest suite for game rules + MCTS
 
 ## Two ways to play
 
-1. **[Live browser demo](https://allix05.github.io/alphazero-connect4/)** (`docs/`) &mdash; the model is exported to ONNX and runs entirely client-side via [ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) (WebAssembly). The game rules and MCTS search are ported to plain JS (`docs/connect4.js`, `docs/mcts.js`) so it makes identical decisions to the Python implementation, verified against it numerically (see `scripts/export_onnx.py`). No server, no cold starts, free to host forever on GitHub Pages.
+1. **[Live browser demo](https://allix05.github.io/AlphaZero-Connect-Four/)** (`docs/`) &mdash; the model is exported to ONNX and runs entirely client-side via [ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) (WebAssembly). The game rules and MCTS search are ported to plain JS (`docs/connect4.js`, `docs/mcts.js`) so it makes identical decisions to the Python implementation, verified against it numerically (see `scripts/export_onnx.py`). No server, no cold starts, free to host forever on GitHub Pages.
 2. **Local FastAPI server** (`web/`) &mdash; runs the actual PyTorch model, useful when iterating on the network itself: `uvicorn web.server:app --reload`.
 
 ## Why these design choices
